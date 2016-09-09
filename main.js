@@ -13,7 +13,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: size.width, height: size.height});
 
   // and load the index.html of the app.
-  mainWindow.loadURL('file://' + __dirname + '/src/sambotha/sambotha.html');
+  mainWindow.loadURL('file://' + __dirname + '/src/tibetdoc/tibetdoc.html');
   //mainWindow.loadURL('file://' + __dirname + '/src/tibetdoc/tibetdoc.html');
 
   // Open the DevTools.
