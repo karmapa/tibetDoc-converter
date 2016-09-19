@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'eval',
 
   entry: {
-    html: './src/index.html'
+    html: './src/tibetdoc/index.html'
   },
 
   output: {
