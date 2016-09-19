@@ -14,6 +14,7 @@ function act() {
     downLink.target = '_blank'
     downLink.innerHTML = 'Download'
     downLink.download = 'convertedDocument.txt'
+    document.getElementById('reload').style.display = 'inline'
   }
   r.readAsBinaryString(file); 
 }
