@@ -1,4 +1,3 @@
-$(":file").filestyle();
 var r = new FileReader();
 function act() {
   var file = fileInput.files[0]
