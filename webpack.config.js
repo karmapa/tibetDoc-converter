@@ -6,6 +6,12 @@ module.exports = {
   devtool: 'eval',
 
   entry: {
+    javascript: [
+      './src/tibetdoc/index.js',
+      './src/tibetdoc/tibetdoc.js',
+      './src/tibetdoc/parse.js',
+      './src/tibetdoc/ansitable.js'
+    ],
     html: './src/tibetdoc/index.html'
   },
 
