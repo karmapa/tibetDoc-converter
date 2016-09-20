@@ -1,5 +1,7 @@
+var handleConvert = document.getElementById('fileInput');
+handleConvert.addEventListener('change', converter);
 var r = new FileReader();
-function act() {
+function converter() {
   var file = fileInput.files[0];
   r.onload = function() {
     var data = r.result;
