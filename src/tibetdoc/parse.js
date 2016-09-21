@@ -30,30 +30,6 @@ var aligns = {
 	106: 'full'
 };
 
-function fillTags(a, b, c) {
-	var state = {};
-	var states = {
-		bold: 98,
-		italic: 105,
-		underline: 117,
-		strike: 111,
-		redline: 82,
-		hilite1: 49,
-		hilite2: 50,
-		extra: 120,
-		very: 118,
-		large: 108,
-		small: 115,
-		fine: 102,
-	};
-
-	for (var i in states) {
-		state[i] = false;
-		state[states[i]] = i;
-	}
-	return state;
-}
-
 function empty(align) {
 	if (!align) {
 		align = 'left';
@@ -84,7 +60,7 @@ function parseBlocks(dct, flowDecoder) {
 			koul.fontList.push(L[2]);
 			console.log('Font #' + koul.fontList.length + ':', L[2]);
 		}
-		if (parseInt(L[0], 10) > 0 && '!' === L[1]) {
+		if (parseInt(L[0]) > 0 && '!' === L[1]) {
 			var num = L[0];
 			L = L.slice(2).join('\t');
 			console.log('Text block #' + num + ':', L.length, 'bytes.');
@@ -189,7 +165,6 @@ function decoder(str, koul) {
 					} else {
 						align.push(ali);
 					}
-					newAlign = 'left';
 					if (align.length > 0) {
 						var para = koul.doc[koul.doc.length - 1];
 						para.align = effectiveAlign();
@@ -210,14 +185,14 @@ function decoder(str, koul) {
 					add_data(koul, {
 						type: 'font',
 						id: parseInt(n.substr(6, 3)) - 1,
-						begin: n[2] === '0'
+						begin: '0' === n[2]
 					});
 				}
 				if ('1' === n[0]) {
 					add_data(koul, {
 						type: 'size',
 						size: parseInt(n.substr(5, 3)),
-						begin: n[2] === '0'
+						begin: '0' === n[2]
 					});
 				}
 			}
@@ -238,7 +213,7 @@ function decoder(str, koul) {
 		} else if (code <= 23) {
 			add_text(koul, lookup(code, str.charCodeAt(++i)));
 		} else if (32 === code) {
-			add_text(koul, ' ')
+			add_text(koul, ' ');
 		} else {
 			add_text(koul, lookup(codepage, code));
 		}
@@ -253,7 +228,7 @@ function dctToJson(binaryBlob) {
 	return H;
 }
 
-if (typeof(module) !== 'undefined') {
+if ('undefined' !== typeof(module)) {
 	var fs = require('fs');
 	try {
 		require('./html');
@@ -268,7 +243,6 @@ if (typeof(module) !== 'undefined') {
 		return dctToJson(fs.readFileSync(fname, 'binary').toString());
 	}
 
-	;
 	var convertFile = function (input) {
 		var json = parseFile(input);
 		var html = toHTML(json);
