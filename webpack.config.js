@@ -7,12 +7,9 @@ module.exports = {
 
   entry: {
     javascript: [
-      './src/tibetdoc/index.js',
-      './src/tibetdoc/tibetdoc.js',
-      './src/tibetdoc/parse.js',
-      './src/tibetdoc/ansitable.js'
+      './src/index.js'
     ],
-    html: './src/tibetdoc/index.html'
+    html: './index.html'
   },
 
   output: {
@@ -41,7 +38,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['babel'],
+        loaders: ['react-hot', 'babel'],
       },
       { test: /\.css$/, loader: 'style-loader!css-loader'},
       {
