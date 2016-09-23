@@ -5,13 +5,12 @@ class App extends Component {
     return (
       <div>
         <h1>TibetDoc to unicode converter</h1>
-        <input type="file" id="fileInput" accept=".dct"></input>
+        <input type="file" id="fileInput" accept=".dct" />
         <div id="downBar">
-          <a id=downLink></a><span id="reload">X</span>
+          <a id="downLink" /><span id="reload">X</span>
         </div>
-        <hr>
-          <pre_><font id="a"><pre_>
-        </hr>
+        <div className="divLine" />
+        <pre_><font id="a" /></pre_>
       </div>
     );
   }

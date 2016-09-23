@@ -17,6 +17,10 @@
   padding-right: 10px;
 }
 
+.divLine {
+  border-top: solid 0.5px;
+}
+
 #reload {
   display: none;
   background: #f6f7f9;
