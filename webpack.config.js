@@ -7,7 +7,7 @@ module.exports = {
 
   entry: {
     javascript: [
-      './src/index.js'
+      './src/index'
     ],
     html: './index.html'
   },
@@ -43,8 +43,9 @@ module.exports = {
       { test: /\.css$/, loader: 'style-loader!css-loader'},
       {
         test: /\.html$/,
-        loader: 'file-loader?name=[name].[ext]',
+        loader: "file-loader?name=[name].[ext]",
       }
     ]
   }
+
 };
