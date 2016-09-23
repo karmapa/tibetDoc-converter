@@ -2,7 +2,7 @@
   "name": "converter-app",
   "version": "0.0.1",
   "description": "build TibetDoc/Sambotha to unicode converter app by electron",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint *.js",
     "dev": "webpack-dev-server --progress --colors --hot --inline",
@@ -30,8 +30,7 @@
     "electron": "1.3.4",
     "react": "15.3.2",
     "react-dom": "15.3.2",
-    "react-redux": "4.4.5",
-    "redux": "3.6.0"
+    "tibetdoc-parser": "https://github.com/karmapa/tibetdoc-parser.git#1de0908"
   },
   "devDependencies": {
     "babel-core": "6.7.7",
