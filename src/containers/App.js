@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Parser from 'tibetdoc-parser';
 
 class App extends Component {
   render() {
