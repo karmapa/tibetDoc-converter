@@ -32,20 +32,8 @@ class App extends Component {
           download: 'convertedDocument.txt'
         }
       });
-      console.log('1', url);
-      return;
     };
     fileReader.readAsBinaryString(file);
-  }
-
-  fileOnLoad(reader) {
-    console.log('a');
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('111', nextProps);
-    console.log('222', nextState);
-    return true;
   }
 
   render() {
@@ -62,7 +50,6 @@ class App extends Component {
         <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
         <div id="downBar">
           {downLink}
-          <a value="ddddddddd" />
         </div>
         <div className="divLine" />
         <pre_><font id="result" />{this.state.output}</pre_>
