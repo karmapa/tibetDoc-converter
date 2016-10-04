@@ -7,7 +7,7 @@
     "lint": "eslint *.js",
     "dev": "webpack-dev-server --progress --colors --hot --inline",
     "pack-dev": "electron .",
-    "build": "electron-packager . tibetdoc-converter --all --overwrite"
+    "build": "electron-packager ./dist tibetdoc-converter --platform=darwin,win32 --arch=x64 --out=./dist --overwrite"
   },
   "repository": {
     "type": "git",
