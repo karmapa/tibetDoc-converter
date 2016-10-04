@@ -37,6 +37,13 @@ class App extends Component {
   }
 
   render() {
+    const dataInnerHTML = this.state.output.split('\n').map((str, idx) => {
+      if (!str) {
+        return;
+      } else {
+        return <div className="lineBreak" key={idx}>{str}</div>;
+      }
+    });
     const options = this.state.downLoadOptions;
     let downLink = '';
     if (this.state.downLoadOptions.href !== '') {
@@ -52,7 +59,7 @@ class App extends Component {
           {downLink}
         </div>
         <div className="divLine" />
-        <pre_><font id="result" />{this.state.output}</pre_>
+        <pre_><font id="result" />{dataInnerHTML}</pre_>
       </div>
     );
   }
