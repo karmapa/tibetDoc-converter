@@ -59,7 +59,7 @@ class App extends Component {
           {downLink}
         </div>
         <div className="divLine" />
-        <pre_><font id="result" />{dataInnerHTML}</pre_>
+        <pre_><font id="result">{dataInnerHTML}</font></pre_>
       </div>
     );
   }
