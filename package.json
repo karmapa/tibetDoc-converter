@@ -2,12 +2,12 @@
   "name": "converter-app",
   "version": "0.0.1",
   "description": "build TibetDoc/Sambotha to unicode converter app by electron",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "lint": "eslint *.js",
     "dev": "webpack-dev-server --progress --colors --hot --inline",
-    "pack-dev": "electron .",
-    "build": "electron-packager ./dist tibetdoc-converter --platform=darwin,win32 --arch=x64 --out=./dist --overwrite"
+    "pack-dev": "electron ./dist",
+    "build": "electron-packager ./dist tibetdoc-converter --platform=darwin,win32 --arch=x64 --out=./packed --overwrite"
   },
   "repository": {
     "type": "git",
