@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --progress --colors --hot --inline",
     "webpack": "webpack",
     "pack-dev": "electron ./dist",
-    "build": "electron-packager ./dist tibetdoc-converter-v0.0.1 --platform=darwin,win32 --arch=x64 --out=./packed --overwrite"
+    "build": "./bin/build.sh"
   },
   "repository": {
     "type": "git",
