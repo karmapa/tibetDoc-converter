@@ -6,7 +6,6 @@
   "scripts": {
     "lint": "eslint *.js",
     "dev": "webpack-dev-server --progress --colors --hot --inline",
-    "webpack": "webpack",
     "pack-dev": "electron ./dist",
     "build": "./bin/build.sh"
   },
@@ -18,7 +17,6 @@
     "electron",
     "converter",
     "TibetDoc",
-    "Sambotha",
     "app"
   ],
   "author": "karmapa",

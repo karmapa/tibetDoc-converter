@@ -1,5 +1,6 @@
 #!/bin/bash
 
+webpack
 cd dist
 sed -i '' 's/http:\/\/localhost:8080/\./g' index.html
 rm -rf tibetDoc-converter-*
