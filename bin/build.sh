@@ -8,9 +8,12 @@ ZIP_WIN="tibetDoc-converter-win32-x64-v${PACKAGE_VERSION}.zip"
 
 rm -rf dist
 webpack
+cp -r package.json main.js dist/
 cd dist
 sed -i '' 's/http:\/\/localhost:8080/\./g' index.html
-rm -rf tibetDoc-converter-*
-git clone git@github.com:rickie120243/pack-electron.git
-cp -r ./pack-electron/* ./
-electron-packager . tibetDoc-converter --platform=darwin,win32 --arch=x64 --overwrite
+
+electron-packager . tibetDoc-converter --platform=darwin,win32 --arch=x64 --version="${ELECTRON_VERSION}" --app-version="${PACKAGE_VERSION}"
+zip -r "${ZIP_WIN}" tibetDoc-converter-win32-x64
+gdrive upload "${ZIP_WIN}" -p "${FOLDER_ID}"
+zip -r "${ZIP_IOS}" tibetDoc-converter-darwin-x64
+gdrive upload "${ZIP_IOS}" -p "${FOLDER_ID}"
