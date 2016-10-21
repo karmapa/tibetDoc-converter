@@ -5,7 +5,7 @@ TibetDoc to unicode converter app by electron
 
 
 ##Test on browser
-http://karmapa.github.io/tibetan-converter/tibetDoc-converter/index.html
+[TibetDoc-converter on browser](http://karmapa.github.io/tibetan-converter/tibetDoc-converter/index.html)
 
 [Test file Download](https://drive.google.com/open?id=0B9GraSYa0W12ZjNUT3RtRzl0bjA)
 
