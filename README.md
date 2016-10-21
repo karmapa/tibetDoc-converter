@@ -9,7 +9,7 @@ http://karmapa.github.io/tibetan-converter/tibetDoc-converter/index.html
 
 [Test file Download](https://drive.google.com/open?id=0B9GraSYa0W12ZjNUT3RtRzl0bjA)
 
-![tibetDoc-converter example](https://drive.google.com/open?id=0B9GraSYa0W12NEpUWUZLU25XU2M)
+![tibetDoc-converter example](https://github.com/karmapa/tibetDoc-converter/blob/master/assets/img/tibetDoc-converter-example.png)
 
 ##Front-end environment setup
 ```
