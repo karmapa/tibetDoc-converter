@@ -7,7 +7,9 @@ class App extends Component {
     this.state = {
       output: '',
       downLoadOptions: {
-        href: ''
+        href: '',
+        target: '',
+        download: ''
       }
     };
   }
@@ -16,6 +18,17 @@ class App extends Component {
 
   converter = event => {
     const file = event.target.files[0];
+    if (undefined === file) {
+      this.setState({
+        output: '',
+        downLoadOptions:{
+          href: '',
+          target: '',
+          download: ''
+        }
+      });
+      return;
+    }
     const fileReader = this.fileReader;
     fileReader.onload = () => {
       let data = fileReader.result;
