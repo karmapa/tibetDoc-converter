@@ -9,7 +9,7 @@ it('Check input tag if file is empty', () => {
   expect(checkApp.find('input').simulate('onchange', '').hasClass('lineBreak')).toEqual(false);
 });
 
-it('App input tag changes after read file', () => {
+it('Check if node exist', () => {
   const checkApp = shallow(
     <App />
   );
