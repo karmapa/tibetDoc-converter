@@ -34,7 +34,7 @@ class App extends Component {
       let data = fileReader.result;
       data = tibetDoc.parse(data.toString());
       data = tibetDoc.JSONToHTML(data);
-      data = data.replace(/<p.+?>/g, '\n').replace(/&nbsp;/g, ' ').replace(/<.+?>/g, '').replace(/^\r?\n/g, '');
+      data = tibetDoc.HTMLtoText(data);
       var downLoad = new Blob([data], {encoding: 'utf8', type: 'text/html'});
       var url = URL.createObjectURL(downLoad);
       this.setState({
