@@ -30,7 +30,7 @@
     "electron": "1.3.4",
     "react": "15.3.2",
     "react-dom": "15.3.2",
-    "tibetdoc-parser": "https://github.com/karmapa/tibetdoc-parser.git#3d6b27d"
+    "tibetdoc-parser": "https://github.com/karmapa/tibetdoc-parser.git#24eef96"
   },
   "devDependencies": {
     "babel-core": "6.7.7",
