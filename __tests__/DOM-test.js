@@ -7,7 +7,7 @@ it('Check input tag if file is undefined', () => {
   const checkApp = mount(
     <App />
   );
-  expect(checkApp.find('input').simulate('change', {target: {files: [undefined]}}).hasClass('empty')).toEqual(true);
+  expect(checkApp.find('input').simulate('change', {target: {files: [undefined]}}).hasClass('downLink')).toEqual(false);
 });
 
 it('Check input tag if file is not empty', () => {
