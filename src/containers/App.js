@@ -5,7 +5,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      inputState: 'no',
       output: '',
       downLoadOptions: {
         href: '',
@@ -21,7 +20,6 @@ class App extends Component {
     const file = event.target.files[0];
     if (undefined === file) {
       this.setState({
-        inputState: 'empty',
         output: '',
         downLoadOptions:{
           href: '',
@@ -40,7 +38,6 @@ class App extends Component {
       var downLoad = new Blob([data], {encoding: 'utf8', type: 'text/html'});
       var url = URL.createObjectURL(downLoad);
       this.setState({
-        inputState: 'yes',
         output: data,
         downLoadOptions:{
           href: url,
@@ -70,7 +67,7 @@ class App extends Component {
     return (
       <div>
         <h1>TibetDoc to unicode converter</h1>
-        <input type="file" id="fileInput" className={this.state.inputState} onChange={this.converter} accept=".dct" />
+        <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
         <div id="downBar">
           {downLink}
         </div>
