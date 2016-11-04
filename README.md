@@ -1,4 +1,6 @@
 # TibetDoc converter
+[![Build Status](https://travis-ci.org/karmapa/tibetDoc-converter.svg?branch=master)](https://travis-ci.org/karmapa/tibetDoc-converter)
+
 TibetDoc to unicode converter app by electron
 
 [Download TibetDoc converter](https://drive.google.com/drive/folders/0B9GraSYa0W12cjJFNFR0MEJNZmM)
