@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var bootstrapEntryPoints = require('./webpack.bootstrap.config.js');
 
 module.exports = {
 
