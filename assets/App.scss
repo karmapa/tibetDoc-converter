@@ -1,0 +1,106 @@
+@import './variables';
+
+:global(#dropdown-lang) {
+  i:global(.fa.shifted) {
+    margin-right: 12px;
+    font-size: 22px;
+    vertical-align: middle;
+  }
+}
+
+.app {
+  $size: 42px;
+  .brand {
+    display: inline-block;
+    float: left;
+    background-image: url('./logo.png');
+    background-repeat: no-repeat;
+    height: $height-navbar;
+    width: $size + 32px;
+    background-position: center center;
+    background-size: $size $size;
+  }
+  .brandText {
+    vertical-align: middle;
+    height: $height-navbar;
+    line-height: $height-navbar;
+  }
+  .intruduction {
+    display: inline-block;
+    background-image: url('./bg-adarsha-leaf.png');
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    background-position: center center;
+  }
+  .intruText {
+    vertical-align: middle;
+    height: $height-navbar;
+    line-height: $height-navbar;
+  }
+  .footerNav {
+    background-color: #004449;
+    ul {
+      text-align: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      > li {
+        display: inline-block;
+        > a {
+          color: #fff;
+          display: inline-block;
+          padding: 7px 20px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .footerSection {
+    color: #fff;
+    padding-top: 51px;
+    background-color: #00363c;
+    .footerContent {
+      font-family: "PingFangTC-Regular", "Helvetica Neue", Helvetica, sans-serif;
+      width: 600px;
+      @media (max-width: $screen-xs) {
+        width: initial;
+      }
+      @media (min-width: $screen-sm) {
+        width: initial;
+      }
+      .footerLogo img {
+        float: left;
+        @media (max-width: $screen-xs) {
+          float: none;
+          margin-bottom: 14px;
+        }
+        @media (min-width: $screen-sm) {
+          float: right;
+        }
+      }
+      .footerContact {
+        float: left;
+        h2 {
+          padding: 7px 0;
+          margin: 0;
+          font-size: 14px;
+        }
+        ul {
+          font-size: 12px;
+          list-style-type: none;
+          li {
+            margin: 3px 0;
+          }
+        }
+      }
+      .footerCompany {
+        padding-top: 23px;
+        padding-bottom: 18px;
+        text-align: center;
+      }
+    }
+  }
+}
+.appContent {
+  margin: $height-navbar 0 0 0; // for fixed navbar
+}

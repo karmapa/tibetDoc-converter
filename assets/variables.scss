@@ -1,0 +1,42 @@
+/**
+ *  Define scss variables here.
+ *
+ *  Available options for Bootstrap:
+ *  http://getbootstrap.com/customize/
+ *
+ */
+
+// Custom Colors
+$cyan: #33e0ff;
+$humility: #777;
+
+// Bootstrap Variables
+$brand-primary: #00656d;
+$brand-primary-ex: #00363c;
+
+$brand-success: #5cb85c;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+$brand-info: #5bc0de;
+
+$navbar-text-color: #fff;
+$navbar-bg: #004344;
+$navbar-bg-ex: $brand-primary-ex;
+
+$text-color: #333;
+
+$font-size-base: 14px;
+$font-family-sans-serif: "PingFangTC-Regular", "Helvetica Neue", Helvetica, sans-serif;
+
+$height-navbar: 70px;
+$width-dropdown: 137px;
+
+$font-size-navbar: 16px;
+$font-size-navbar-item: 18px;
+
+$grid-gutter-width: 46px;
+
+$screen-lg: 1200px;
+$screen-md: 992px;
+$screen-sm: 768px;
+$screen-xs: 480px;

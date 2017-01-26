@@ -1,0 +1,280 @@
+@import './variables';
+//@import './debug';
+
+/**
+ * Override Bootstrap styles that you can't modify via variables here.
+ *
+ */
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+  > .container {
+    width: 100%;
+  }
+}
+
+.navbar-brand {
+  position: relative;
+  margin-left: 0;
+  padding-left: 19px;
+}
+
+.navbar-default {
+
+  border: 0;
+
+  .navbar-collapse,
+  .navbar-form {
+    border: 0;
+  }
+
+  font-size: $font-size-navbar;
+  min-height: $height-navbar;
+  background-color: $navbar-bg;
+
+  .navbar-nav > .active > a {
+    &, &:hover, &:focus {
+      color: #33e0ff;
+      background-color: transparent;
+    }
+  }
+
+  .navbar-brand {
+    font-size: 1em;
+    height: $height-navbar;
+    padding-top: 0;
+    margin-bottom: 0;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    &, &:hover, &:focus {
+      color: $navbar-text-color;
+    }
+  }
+
+  .dropdown-toggle {
+    &:focus {
+      outline: auto;
+    }
+    width: $width-dropdown;
+    padding: 0;
+    height: $height-navbar;
+    line-height: $height-navbar;
+    &, &:hover, &:focus {
+      color: $navbar-text-color;
+      text-decoration: none;
+    }
+    span:first-child {
+      margin-right: 4px;
+    }
+    .caret {
+      border-top: 6px dashed;
+      border-right: 6px solid transparent;
+      border-left: 6px solid transparent;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: -2px;
+    border-radius: 0;
+    min-width: $width-dropdown;
+    border: 0;
+    background-color: $navbar-bg;
+    > li > a {
+      font-size: $font-size-navbar-item;
+      color: $navbar-text-color;
+      text-align: center;
+      padding: 10px 10px;
+      &:hover, &:focus {
+        background-color: $navbar-bg-ex;
+      }
+    }
+  }
+
+  @mixin dropdownInMobile() {
+    div.open.dropdown.btn-group.btn-group-link {
+      display: inline;
+    }
+    .dropdown {
+      width: 100%;
+    }
+    .dropdown-menu,
+    .open .dropdown-menu {
+      display: block;
+      position: static;
+      width: 100%;
+      margin-top: 0;
+      box-shadow: none;
+    }
+    .open.dropdown.btn-group.btn-group.btn-group-link > .dropdown-menu > li > a {
+      padding: 10px 10px;
+      line-height: 1.42857;
+    }
+    .dropdown-toggle .caret {
+      display: none;
+    }
+  }
+
+  @media (max-width: $screen-xs) {
+    @include dropdownInMobile();
+  }
+  @media (min-width: $screen-xs) {
+    @include dropdownInMobile();
+  }
+  @media (min-width: $screen-sm) {
+    div.open.dropdown.btn-group.btn-group-link {
+      display: inline-block;
+    }
+    .dropdown-menu {
+      display: none;
+    }
+    .open .dropdown-menu {
+      display: block;
+      position: absolute;
+    }
+    .dropdown-toggle .caret {
+      display: inline-block;
+    }
+  }
+
+  .navbar-nav .open .dropdown-menu > li > a {
+    &, &:hover, &:focus {
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  .navbar-toggle {
+    &:hover, &:active, &:focus {
+      background-color: $brand-primary-ex;
+    }
+    margin-top: 12px;
+    margin-right: 9px;
+    border: 0;
+    border-radius: 0;
+    padding: 15px 14px;
+    .icon-bar {
+      width: 24px;
+      border-radius: 0;
+      background-color: #fff;
+    }
+    .icon-bar + .icon-bar {
+      margin-top: 6px;
+    }
+  }
+}
+
+.breadcrumb > li {
+  > a, > span {
+    color: #0c353b;
+    font-size: 13px;
+  }
+}
+.breadcrumb > li + li:before {
+  content: '>';
+  color: #0c353b;
+}
+
+h2.shuriken:before {
+  margin-top: -4px;
+  margin-right: 19px;
+}
+
+.shuriken {
+  &:before {
+    width: 30px;
+    height: 30px;
+    content: '';
+    display: inline-block;
+    background-image: url('/shuriken.png');
+    background-size: 30px 30px;
+    vertical-align: middle;
+  }
+}
+
+.btn {
+  border: 0;
+  border-radius: 0;
+}
+.btn-lg {
+  padding: 13px 42px;
+}
+
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form-control {
+  &, &:focus {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+  }
+}
+
+.form-control ~ .text-danger {
+  margin-top: 7px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.has-error .form-control {
+  &, &:focus {
+    box-shadow: none;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .modal-dialog {
+    width: 640px;
+  }
+}
+
+.modal-content {
+  border-radius: 0;
+}
+.modal-header {
+  background-color: #f2f2f2;
+}
+.modal-success {
+  margin-top: 200px;
+  .modal-header {
+    background-color: #fff;
+    border: 0;
+  }
+  .modal-body {
+    padding: 6px 87px 48px;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+.modal-body {
+  padding: 27px 87px 54px;
+}
+.modal-title {
+  padding: 42px 60px 32px;
+}
+
+.btn-default {
+  color: #0c353b;
+  border: 1px solid #0c353b;
+  &:hover, &:active, &:focus {
+    border: 1px solid #0c353b;
+    background-color: #eaeaea;
+  }
+  &:disabled {
+    color: #0c353b;
+    border: 1px solid #9aaea0;
+  }
+}
