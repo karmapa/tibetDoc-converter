@@ -1,5 +1,6 @@
 import 'babel-polyfill';
-import './index.css';
+import './index.scss';
+import './../assets/App.scss';
 import React from 'react';
 import {render} from 'react-dom';
 import App from './containers/App.js';

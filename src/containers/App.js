@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import tibetDoc from 'tibetdoc-parser';
+import {DropdownButton, MenuItem, Nav, Navbar} from 'react-bootstrap';
+
+const footerLogoImage = require('./footer-logo.png');
 
 class App extends Component {
   constructor() {
@@ -65,14 +68,64 @@ class App extends Component {
       downLink = '';
     }
     return (
-      <div>
-        <h1>TibetDoc to unicode converter</h1>
-        <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
-        <div id="downBar">
-          {downLink}
+      <div className="app">
+        <Navbar fixedTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <span className="brand" />
+              <span className="brandText">Dharma Treasure</span>
+            </Navbar.Brand>
+            <Navbar.Toggle/>
+          </Navbar.Header>
+
+        </Navbar>
+
+        <div className="appContent">
+          <span className="intruduction" />
+          <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+          <div id="downBar">
+            {downLink}
+          </div>
+          <div className="divLine" />
+          <pre_><font id="result">{dataInnerHTML}</font></pre_>
         </div>
-        <div className="divLine" />
-        <pre_><font id="result">{dataInnerHTML}</font></pre_>
+
+        <footer>
+          <section>
+            <div className="footerSection">
+              <div className="footerContent container clearfix">
+                <div className="row">
+                  <div className="footerLogo col-sm-6">
+                    <img src={footerLogoImage} alt="footer logo image" />
+                  </div>
+                  <div className="footerContact col-sm-6">
+                    <h2>
+                      Contact us
+                    </h2>
+                    <ul>
+                      <li>
+                        Email
+                        <span>: dharma.treasure.corp@gmail.com</span>
+                      </li>
+                      <li>
+                        Phone
+                        <span>: 02-27586828</span>
+                      </li>
+                      <li>
+                        Address
+                        <span id="address-content">: 9F., No.401, Sec. 4, Xinyi Rd., Xinyi Dist., Taipei City 11051, Taiwan</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="footerCompany">
+                  <i className="fa fa-fw fa-at" />
+                  <span>@2016 Dharma Treasure Corp. All right reserved.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </footer>
       </div>
     );
   }
