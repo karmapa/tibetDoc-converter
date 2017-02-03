@@ -182,8 +182,10 @@
       }
     }
   }
+  .fileReady {
+
+  }
 }
 .appContent {
-  height: calc(100vh - 273px);
   margin: $height-navbar 0 0 0; // for fixed navbar
 }

@@ -12,6 +12,7 @@
 .fileType {
   text-align: center;
   padding-top: 12px;
+  padding-bottom: 48px;
   font-size: 16px;
   font-family: PingFangTC-Medium;
 }
@@ -39,7 +40,7 @@
   border: 2px solid #dddddd;
 }
 
-#result {
+.result {
   height: calc(100vh - 670px);
   padding-top: 8px;
   overflow-y: auto;
@@ -48,4 +49,9 @@
   font-family: Kailasa-Bold;
   font-size: 24px;
   color: #383735;
+  padding-bottom: 100px;
+}
+
+.render {
+  height: calc(100vh - 667px);
 }

@@ -57,6 +57,7 @@ class App extends Component {
 
   render() {
     const options = this.state.downLoadOptions;
+    let result = 'result';
     let clickButton = (
       <div className="upLoadButton">
         <div className="fileLoad btn-primary">
@@ -66,6 +67,7 @@ class App extends Component {
       </div>
     );
     if (this.state.output) {
+      result = 'result render';
       clickButton = (
         <div className="upAndDownButton">
           <div className="fileLoad anti btn-primary">
@@ -123,7 +125,7 @@ class App extends Component {
           </div>
           {clickButton}
           {fileInfo}
-          <div id="result">{dataInnerHTML}</div>
+          <div className={result}>{dataInnerHTML}</div>
         </div>
 
         <footer>
