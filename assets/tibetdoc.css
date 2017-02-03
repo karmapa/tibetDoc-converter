@@ -1,7 +1,3 @@
-.converter {
-  height: 500px;
-}
-
 .buttonText {
   padding: 2px 3px 2px 3px;
   cursor: pointer;
@@ -13,6 +9,13 @@
   background-color: #f6f7f9;
 }
 
+.fileType {
+  text-align: center;
+  padding-top: 12px;
+  font-size: 16px;
+  font-family: PingFangTC-Medium;
+}
+
 #downBar {
   padding-top: 10px;
 }
@@ -22,7 +25,9 @@
 }
 
 .divLine {
-  border-top: solid 0.5px #000000;
+  margin: 0 auto;
+  width: 78%;
+  border: 1px solid #0C353B;
 }
 
 #reload {
@@ -35,6 +40,12 @@
 }
 
 #result {
-  font-size: 18pt;
-  font-family: Microsoft Himalaya;
+  height: calc(100vh - 670px);
+  padding-top: 8px;
+  overflow-y: auto;
+  width: 67%;
+  margin: 0 auto;
+  font-family: Kailasa-Bold;
+  font-size: 24px;
+  color: #383735;
 }

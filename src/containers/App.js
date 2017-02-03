@@ -8,6 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      input: '',
       output: '',
       downLoadOptions: {
         href: '',
@@ -23,6 +24,7 @@ class App extends Component {
     const file = event.target.files[0];
     if (undefined === file) {
       this.setState({
+        input: '',
         output: '',
         downLoadOptions:{
           href: '',
@@ -41,6 +43,7 @@ class App extends Component {
       var downLoad = new Blob([data], {encoding: 'utf8', type: 'text/html'});
       var url = URL.createObjectURL(downLoad);
       this.setState({
+        input: file.name,
         output: data,
         downLoadOptions:{
           href: url,
@@ -53,20 +56,54 @@ class App extends Component {
   }
 
   render() {
+    const options = this.state.downLoadOptions;
+    let clickButton = (
+      <div className="upLoadButton">
+        <div className="fileLoad btn-primary">
+          <span className="glyphicon glyphicon-open-file">upload</span>
+          <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+        </div>
+      </div>
+    );
+    if (this.state.output) {
+      clickButton = (
+        <div className="upAndDownButton">
+          <div className="fileLoad anti btn-primary">
+            <span className="glyphicon glyphicon-open-file" aria-hidden="true">upload</span>
+            <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+          </div>
+          <a {...options}>
+            <div className="fileDownload btn-primary">
+              <span className="glyphicon glyphicon-save-file" aria-hidden="true">down</span>
+            </div>
+          </a>
+        </div>
+      );
+    }
+
+    let fileInfo = (
+      <div className="fileType">
+      Upload a file, type: docx, txt
+      </div>
+    );
+    if (this.state.output) {
+      let fileName = 'File name: ' + this.state.input;
+      fileInfo = (
+        <div>
+          <div className="fileName">{fileName}</div>
+          <div className="divLine" />
+        </div>
+      );
+    }
+
     const dataInnerHTML = this.state.output.split('\n').map((str, idx) => {
       if (!str) {
         return;
       } else {
-        return <div className="lineBreak" key={idx}>{str}</div>;
+        return <div key={idx}>{str}</div>;
       }
     });
-    const options = this.state.downLoadOptions;
-    let downLink = '';
-    if (this.state.downLoadOptions.href !== '') {
-      downLink = <span><a id="downLink" {...options}>Download</a><span id="reload">X</span></span>;
-    } else {
-      downLink = '';
-    }
+
     return (
       <div className="app">
         <Navbar fixedTop>
@@ -81,16 +118,12 @@ class App extends Component {
         <div className="appContent">
           <div className="intruduction">
             <span className="intruImg" />
-            <span className="intruText">TibetDoc is a Tibetan document editing software that was developed by Padma Karpa Translation Committee. This software has been widely used by monasteries and monastic universities across the Himalayan region. We have developed a function to enable switching between TibetDoc format and the more common Unicode format for the convenience of users that have previously organized information using the TibetDoc format.</span>
+            <div className="intruTitle">TibetDoc to unicode converter</div>
+            <div className="intruText">TibetDoc is a Tibetan document editing software that was developed by Padma Karpa Translation Committee. This software has been widely used by monasteries and monastic universities across the Himalayan region. We have developed a function to enable switching between TibetDoc format and the more common Unicode format for the convenience of users that have previously organized information using the TibetDoc format.</div>
           </div>
-          <div className="fileLoad">上傳檔案
-            <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
-          </div>
-          <div id="downBar">
-            {downLink}
-          </div>
-          <div className="divLine" />
-          <pre_><font id="result">{dataInnerHTML}</font></pre_>
+          {clickButton}
+          {fileInfo}
+          <div id="result">{dataInnerHTML}</div>
         </div>
 
         <footer>

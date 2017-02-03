@@ -26,17 +26,99 @@
     line-height: $height-navbar;
   }
   .intruduction {
+    position: relative;
+    height: 200px;
+    padding-bottom: 76px;
+  }
+  .intruImg {
+    z-index: -1;
+    position: absolute;
     display: inline-block;
     background-image: url('./bg-adarsha-leaf.png');
     background-repeat: no-repeat;
     height: 200px;
     width: 100%;
     background-position: center center;
+    background-size:cover;
+  }
+  .intruTitle {
+    height: 80px;
+    overflow: hidden;
+    padding-top: 40px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: PingFangTC-Medium;
+    font-size: 26px;
+    color: #383735;
   }
   .intruText {
-    vertical-align: middle;
-    height: $height-navbar;
-    line-height: $height-navbar;
+    height: 115px;
+    overflow: hidden;
+    padding-top: 12px;
+    margin: 0 auto;
+    width: 78%;
+    text-align: center;
+    font-family: PingFangTC-Medium;
+    font-size: 14px;
+    color: #383735;
+  }
+  .upLoadButton {
+    margin: 76px calc(50% - 52.75px) 0 calc(50% - 52.75px);
+  }
+  .upAndDownButton {
+    margin: 76px calc(50% - 117.5px) 0 calc(50% - 117.5px);
+    a {
+      text-decoration: none;
+    }
+  }
+  .fileLoad {
+    font-size: $clickButton-font-size;
+    font-family: $clickButton-font-family;
+    position: $clickButton-position;
+    background-color: $clickButton-background-color;
+    border-radius: $clickButton-border-radius;
+    padding: $clickButton-padding;
+    color: $clickButton-color;
+    line-height: $clickButton-line-height;
+    :hover {
+      cursor: pointer;
+    }
+    input {
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0;
+    }
+  }
+  .fileDownload {
+    margin-left: 21px;
+    font-size: $clickButton-font-size;
+    font-family: $clickButton-font-family;
+    position: $clickButton-position;
+    background-color: $clickButton-background-color;
+    border-radius: $clickButton-border-radius;
+    padding: 7px 21px 6px 21px;;
+    color: $clickButton-color;
+    line-height: $clickButton-line-height;
+    display: inline;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .anti {
+    background: #FFFFFF;
+    color: #0C353B;
+    border: 1px solid #0C353B;
+    padding: 6px 15.5px 5px 15.5px;
+    display: inline;
+  }
+  .fileName {
+    font-family: PingFangTC-Medium;
+    font-size: 18px;
+    color: #000000;
+    padding-left: 16.4%;
+    padding-top: 48px;
+    padding-bottom: 17px;
   }
   .footerNav {
     background-color: #004449;
@@ -102,5 +184,6 @@
   }
 }
 .appContent {
+  height: calc(100vh - 273px);
   margin: $height-navbar 0 0 0; // for fixed navbar
 }
