@@ -75,14 +75,17 @@ class App extends Component {
               <span className="brand" />
               <span className="brandText">Dharma Treasure</span>
             </Navbar.Brand>
-            <Navbar.Toggle/>
           </Navbar.Header>
-
         </Navbar>
 
         <div className="appContent">
-          <span className="intruduction" />
-          <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+          <div className="intruduction">
+            <span className="intruImg" />
+            <span className="intruText">TibetDoc is a Tibetan document editing software that was developed by Padma Karpa Translation Committee. This software has been widely used by monasteries and monastic universities across the Himalayan region. We have developed a function to enable switching between TibetDoc format and the more common Unicode format for the convenience of users that have previously organized information using the TibetDoc format.</span>
+          </div>
+          <div className="fileLoad">上傳檔案
+            <input type="file" id="fileInput" onChange={this.converter} accept=".dct" />
+          </div>
           <div id="downBar">
             {downLink}
           </div>
