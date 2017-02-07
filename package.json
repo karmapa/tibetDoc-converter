@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "lint": "eslint *.js",
-    "dev": "BOOTSTRAPRC_LOCATION=./.bootstraprc webpack-dev-server --progress --colors --hot --inline",
+    "dev": "webpack-dev-server --progress --colors --hot --inline",
     "pack-dev": "electron ./dist",
     "build": "./bin/build.sh",
     "test": "jest"
@@ -56,7 +56,12 @@
     "eslint-plugin-react": "6.2.2",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
+    "font-awesome": "4.5.0",
+    "font-awesome-webpack": "0.0.4",
+    "font-awesome-loader": "1.0.1",
     "jest": "16.0.2",
+    "less": "2.6.1",
+    "less-loader": "2.2.2",
     "node-sass": "3.10.1",
     "raw-loader": "0.5.1",
     "react-addons-test-utils": "15.3.2",
