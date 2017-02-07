@@ -120,11 +120,13 @@ class App extends Component {
         <div className="appContent">
           <div className="intruduction">
             <span className="intruImg" />
+            <a href="https://drive.google.com//uc?export=download&id=0B9GraSYa0W12YjJUVFlHU09wMFU" target="_blank">
             <button className="downLoadButton">
-              <span className="glyphicon glyphicon-cloud-download"></span> Mac
+              <i className="fa fa-cloud-download" aria-hidden="true"></i> Mac
             </button>
+            </a>
             <button className="downLoadButton">
-              <span className="glyphicon glyphicon-cloud-download"></span> PC
+              <i className="fa fa-cloud-download" aria-hidden="true"></i> PC
             </button>
             <div className="intruTitle">TibetDoc to unicode converter</div>
             <div className="intruText">TibetDoc is a Tibetan document editing software that was developed by Padma Karpa Translation Committee. This software has been widely used by monasteries and monastic universities across the Himalayan region. We have developed a function to enable switching between TibetDoc format and the more common Unicode format for the convenience of users that have previously organized information using the TibetDoc format.</div>
