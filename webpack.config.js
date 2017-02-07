@@ -7,6 +7,7 @@ module.exports = {
 
   entry: {
     javascript: [
+      'font-awesome-webpack!./assets/font-awesome.config.js',
       'bootstrap-sass!./assets/bootstrap-sass.config.js',
       './src/index'
     ],
@@ -45,14 +46,11 @@ module.exports = {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
-      {
-        test: /\.(ttf|eot|svg)$/,
-        loader: 'file-loader?name=[path][name].[ext]'
-      },
-      {
-        test: /\.woff2?$/,
-        loader: 'url-loader?name=[path][name].[ext]&limit=10000&minetype=application/font-woff'
-      },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
       {
         test: /\.(png|jpg|cur)$/,
         loader: 'url-loader?name=[path][name].[ext]&limit=8192'
