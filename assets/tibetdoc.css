@@ -9,10 +9,14 @@
   background-color: #f6f7f9;
 }
 
+.none {
+  display: none;
+}
+
 .fileType {
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 48px;
+  padding-top: 16px;
+  padding-bottom: 43px;
   font-size: 16px;
   font-family: PingFangTC-Medium;
 }
@@ -23,6 +27,24 @@
 
 #downLink {
   padding-right: 10px;
+}
+
+.downLoadButton {
+  margin-left: -1px;
+  letter-spacing: 0;
+  padding-top: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 98px;
+  height: 40px;
+  opacity: 0.85;
+  font-family: HelveticaNeue-Bold;
+  font-size: 16px;
+  color: #0C353B;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid rgba(154, 174, 160, 0.45);
+  letter-spacing: 0;
 }
 
 .divLine {
@@ -41,7 +63,7 @@
 }
 
 .result {
-  height: calc(100vh - 670px);
+  height: calc(100vh - 669px);
   padding-top: 8px;
   overflow-y: auto;
   width: 67%;

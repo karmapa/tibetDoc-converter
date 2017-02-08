@@ -29,6 +29,9 @@
     position: relative;
     height: 200px;
     padding-bottom: 76px;
+    a {
+      text-decoration: none;
+    }
   }
   .intruImg {
     z-index: -1;
@@ -42,19 +45,22 @@
     background-size:cover;
   }
   .intruTitle {
-    height: 80px;
+    height: 37px;
     overflow: hidden;
-    padding-top: 40px;
     margin: 0 auto;
     text-align: center;
     font-family: PingFangTC-Medium;
     font-size: 26px;
     color: #383735;
+    .localApp {
+      padding-top: 40px;
+      height: 77px;
+    }
   }
   .intruText {
     height: 115px;
     overflow: hidden;
-    padding-top: 12px;
+    padding-top: 22px;
     margin: 0 auto;
     width: 78%;
     text-align: center;
