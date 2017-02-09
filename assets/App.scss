@@ -8,6 +8,10 @@
   }
 }
 
+.navbar-default .dropdown-toggle:focus {
+  outline: none;
+}
+
 .app {
   $size: 42px;
   .brand {

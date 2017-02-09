@@ -56,6 +56,14 @@ class App extends Component {
   }
 
   render() {
+
+    const navTitle = (
+      <span>
+        <i className="fa fa-globe shifted" />
+        繁體中文
+      </span>
+    );
+
     const options = this.state.downLoadOptions;
     let result = 'result';
     let clickButton = (
@@ -114,7 +122,19 @@ class App extends Component {
               <span className="brand" />
               <span className="brandText">Dharma Treasure</span>
             </Navbar.Brand>
+            <Navbar.Toggle/>
           </Navbar.Header>
+
+          <Navbar.Collapse>
+            <Nav navbar pullRight>
+              <DropdownButton id="dropdown-lang" bsStyle="link" title={navTitle}>
+                <MenuItem eventKey="1">English</MenuItem>
+                <MenuItem eventKey="2">བོད་སྐད།</MenuItem>
+                <MenuItem eventKey="3">繁體中文</MenuItem>
+                <MenuItem eventKey="4">简体中文</MenuItem>
+              </DropdownButton>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
 
         <div className="appContent">
