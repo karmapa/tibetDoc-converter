@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import tibetDoc from 'tibetdoc-parser';
 import {DropdownButton, MenuItem, Nav, Navbar} from 'react-bootstrap';
+import bo from '../langs/bo.json';
+import en from '../langs/en.json';
+import zhCN from '../langs/zh-CN.json';
+import zhTW from '../langs/zh-TW.json';
 
 const footerLogoImage = require('./footer-logo.png');
 
@@ -8,6 +12,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      currentLangTitle: {json: en, title: 'English'},
+      langList: {
+        'en': {json: en, title: 'English'},
+        'bo': {json: bo, title: 'བོད་སྐད།'},
+        'tw': {json: zhTW, title: '繁體中文'},
+        'cn': {json: zhCN, title: '简体中文'}
+      },
       input: '',
       output: '',
       downLoadOptions: {
@@ -55,12 +66,19 @@ class App extends Component {
     fileReader.readAsBinaryString(file);
   }
 
+  langSelect = (key) => {
+    this.setState({
+      currentLangTitle: this.state.langList[key]
+    });
+    console.log(key);
+  }
+
   render() {
 
     const navTitle = (
       <span>
         <i className="fa fa-globe shifted" />
-        繁體中文
+        {this.state.currentLangTitle['title']}
       </span>
     );
 
@@ -120,7 +138,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <span className="brand" />
-              <span className="brandText">Dharma Treasure</span>
+              <span className="brandText">{this.state.currentLangTitle['json']['dharma-treasure']}</span>
             </Navbar.Brand>
             <Navbar.Toggle/>
           </Navbar.Header>
@@ -128,10 +146,10 @@ class App extends Component {
           <Navbar.Collapse>
             <Nav navbar pullRight>
               <DropdownButton id="dropdown-lang" bsStyle="link" title={navTitle}>
-                <MenuItem eventKey="1">English</MenuItem>
-                <MenuItem eventKey="2">བོད་སྐད།</MenuItem>
-                <MenuItem eventKey="3">繁體中文</MenuItem>
-                <MenuItem eventKey="4">简体中文</MenuItem>
+                <MenuItem eventKey="en" onSelect={this.langSelect}>{this.state.langList['en']['title']}</MenuItem>
+                <MenuItem eventKey="bo" onSelect={this.langSelect}>{this.state.langList['bo']['title']}</MenuItem>
+                <MenuItem eventKey="tw" onSelect={this.langSelect}>{this.state.langList['tw']['title']}</MenuItem>
+                <MenuItem eventKey="cn" onSelect={this.langSelect}>{this.state.langList['cn']['title']}</MenuItem>
               </DropdownButton>
             </Nav>
           </Navbar.Collapse>
@@ -153,7 +171,7 @@ class App extends Component {
               </a>
             </div>
             <div className="intruTitle">TibetDoc to unicode converter</div>
-            <div className="intruText">TibetDoc is a Tibetan document editing software that was developed by Padma Karpa Translation Committee. This software has been widely used by monasteries and monastic universities across the Himalayan region. We have developed a function to enable switching between TibetDoc format and the more common Unicode format for the convenience of users that have previously organized information using the TibetDoc format.</div>
+            <div className="intruText">{this.state.currentLangTitle['json']['app-tibetdoc-to-unicode-converter-intro-content']}</div>
           </div>
           {clickButton}
           {fileInfo}
@@ -170,20 +188,20 @@ class App extends Component {
                   </div>
                   <div className="footerContact col-sm-6">
                     <h2>
-                      Contact us
+                      {this.state.currentLangTitle['json']['contact-us']}
                     </h2>
                     <ul>
                       <li>
-                        Email
+                        {this.state.currentLangTitle['json']['email']}
                         <span>: dharma.treasure.corp@gmail.com</span>
                       </li>
                       <li>
-                        Phone
+                        {this.state.currentLangTitle['json']['phone']}
                         <span>: 02-27586828</span>
                       </li>
                       <li>
-                        Address
-                        <span id="address-content">: 9F., No.401, Sec. 4, Xinyi Rd., Xinyi Dist., Taipei City 11051, Taiwan</span>
+                        {this.state.currentLangTitle['json']['address']}
+                        <span id="address-content">: {this.state.currentLangTitle['json']['address-content']}</span>
                       </li>
                     </ul>
                   </div>
