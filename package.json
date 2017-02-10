@@ -59,6 +59,7 @@
     "font-awesome": "4.5.0",
     "font-awesome-webpack": "0.0.4",
     "font-awesome-loader": "1.0.1",
+    "json-loader": "0.5.4",
     "jest": "16.0.2",
     "less": "2.6.1",
     "less-loader": "2.2.2",
