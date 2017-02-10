@@ -123,6 +123,12 @@ class App extends Component {
         </div>
       );
     }
+    let intruText = 'intruText';
+    if (this.state.currentLangTitle['title'] === 'English') {
+      intruText = 'intruText';
+    } else {
+      intruText = 'intruText fontBigger';
+    }
 
     const dataInnerHTML = this.state.output.split('\n').map((str, idx) => {
       if (!str) {
@@ -171,7 +177,7 @@ class App extends Component {
               </a>
             </div>
             <div className="intruTitle">TibetDoc to unicode converter</div>
-            <div className="intruText">{this.state.currentLangTitle['json']['app-tibetdoc-to-unicode-converter-intro-content']}</div>
+            <div className={intruText}>{this.state.currentLangTitle['json']['app-tibetdoc-to-unicode-converter-intro-content']}</div>
           </div>
           {clickButton}
           {fileInfo}
