@@ -70,7 +70,6 @@ class App extends Component {
     this.setState({
       currentLangTitle: this.state.langList[key]
     });
-    console.log(key);
   }
 
   render() {
