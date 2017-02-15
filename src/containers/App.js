@@ -198,7 +198,7 @@ class App extends Component {
                     <ul>
                       <li>
                         {this.state.currentLangTitle['json']['email']}
-                        <span>: dharma.treasure.corp@gmail.com</span>
+                        <span>: support@dharma-treasure.org</span>
                       </li>
                       <li>
                         {this.state.currentLangTitle['json']['phone']}
