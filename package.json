@@ -1,6 +1,6 @@
 {
   "name": "tibetDoc-converter",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "description": "build TibetDoc to unicode converter app by electron",
   "main": "main.js",
   "scripts": {
