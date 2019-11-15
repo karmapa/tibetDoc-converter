@@ -2,9 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-
+  mode: process.env.NODE_ENV,
   devtool: 'source-map',
-
   entry: {
     javascript: [
       'font-awesome-webpack!./assets/font-awesome.config.js',
@@ -13,54 +12,97 @@ module.exports = {
     ],
     html: './index.html'
   },
-
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.ProgressPlugin()
   ],
-
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['.js']
   },
-
   module: {
-    loaders: [
+    rules: [
       {
         test: /bootstrap\/js\//,
-        loader: 'imports?jQuery=jquery'
+        use: {
+          loader: 'imports?jQuery=jquery'
+        }
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel'],
+        use: [
+          {
+            loader: 'react-hot'
+          },
+          {
+            loader: 'babel'
+          }
+        ],
       },
-      { test: /\.json$/, loader: 'json-loader' },
+      {
+        test: /\.json$/,
+        use: {
+          loader: 'json-loader'
+        }
+      },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass?outputStyle=expanded'
+        use: {
+          loader: 'style!css!sass?outputStyle=expanded'
+        }
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        use: {
+          loader: 'style-loader!css-loader'
+        }
       },
-      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
-      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: "url?limit=10000&mimetype=application/font-woff"
+        }
+      },
+      {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: "url?limit=10000&mimetype=application/font-woff"
+        }
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: "url?limit=10000&mimetype=application/octet-stream"
+        }
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: "file"
+        }
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: {
+          loader: "url?limit=10000&mimetype=image/svg+xml"
+        }
+      },
       {
         test: /\.(png|jpg|cur)$/,
-        loader: 'url-loader?name=[path][name].[ext]&limit=8192'
+        use: {
+          loader: 'url-loader?name=[path][name].[ext]&limit=8192'
+        }
       },
       {
         test: /\.html$/,
-        loader: "file-loader?name=[name].[ext]",
+        use: {
+          loader: "file-loader?name=[name].[ext]"
+        }
       }
     ]
   }
-
 };
