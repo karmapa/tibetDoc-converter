@@ -164,12 +164,12 @@ class App extends Component {
           <div className="intruduction">
             <span className="intruImg" />
             <div className="appDownLoad">
-              <a href="https://karmapa-converter.s3-ap-southeast-1.amazonaws.com/tibetDoc-converter-darwin-x64-v0.0.4.zip" target="_blank">
+              <a href="https://karmapa-converter.s3-ap-southeast-1.amazonaws.com/tibetDoc-converter-darwin-x64-v0.0.3.zip" target="_blank">
                 <div className="downLoadButton">
                   <i className="fa fa-cloud-download fa-lg" aria-hidden="true"></i> Mac
                 </div>
               </a>
-              <a href="https://karmapa-converter.s3-ap-southeast-1.amazonaws.com/tibetDoc-converter-win32-x64-v0.0.4.zip" target="_blank">
+              <a href="https://karmapa-converter.s3-ap-southeast-1.amazonaws.com/tibetDoc-converter-win32-x64-v0.0.3.zip" target="_blank">
                 <div className="downLoadButton">
                   <i className="fa fa-cloud-download fa-lg" aria-hidden="true"></i> PC
                 </div>
