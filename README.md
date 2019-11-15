@@ -12,13 +12,13 @@ TibetDoc to unicode converter app by electron
 
 ![tibetDoc-converter example](https://github.com/karmapa/tibetDoc-converter/blob/master/assets/img/tibetDoc-converter-example.png)
 
-##Front-end environment setup
+## Front-end environment setup
 
 ```
 npm i
 ```
 
-###Package
+### Package
 
 ```
 npm run build
@@ -30,6 +30,6 @@ This command will build the following to dist folder :
 
 2. Webpack bundle and assets
 
-###Others
+### Others
 
 The build version has to be changed in package.json
