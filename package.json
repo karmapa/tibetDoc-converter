@@ -48,7 +48,7 @@
     "bootstrap-sass": "3.3.6",
     "bootstrap-sass-loader": "1.0.10",
     "css-loader": "0.23.1",
-    "electron": "1.8.8",
+    "electron": "11.5.0",
     "electron-packager": "14.1.0",
     "enzyme": "2.5.1",
     "eslint": "2.8.0",
